@@ -47,7 +47,7 @@ namespace GratitudeApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "kayttaja_id,username,password")] Kayttajat kayttajat)
+        public ActionResult Create([Bind(Include = "username,password")] Kayttajat kayttajat)
         {
             if (ModelState.IsValid)
             {
@@ -55,12 +55,12 @@ namespace GratitudeApp.Controllers
                 string kryptattuSalasana = lService.md5_string(kayttajat.password);
 
                 //Tarkistetaan onko olemassa
-                Kayttajat kayttis = new Kayttajat();
-                kayttis = (from o in db.Kayttajat
+               
+                var kayttis = (from o in db.Kayttajat
                            where kayttajat.username == o.username
-                           select o).FirstOrDefault();
+                           select o.username).FirstOrDefault();
 
-                if (kayttis != null)
+                if (kayttis == null)
                 {
                     //luodaan käyttäjätunnuksen
                     Kayttajat uusikayttaja = new Kayttajat

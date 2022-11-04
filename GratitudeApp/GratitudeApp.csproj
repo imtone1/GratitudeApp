@@ -208,6 +208,7 @@
       <DependentUpon>GratitudeData.edmx</DependentUpon>
       <LastGenOutput>GratitudeData.cs</LastGenOutput>
     </Content>
+    <Content Include="Pictures\feather-dream-catcher-nature-leaf-round-circle.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="GratitudeData.edmx">
