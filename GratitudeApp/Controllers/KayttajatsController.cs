@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GratitudeApp;
+using GratitudeApp.Services;
 
 namespace GratitudeApp.Controllers
 {
@@ -50,11 +51,32 @@ namespace GratitudeApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Kayttajat.Add(kayttajat);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                LoginService lService = new LoginService();
+                string kryptattuSalasana = lService.md5_string(kayttajat.password);
 
+                //Tarkistetaan onko olemassa
+                Kayttajat kayttis = new Kayttajat();
+                kayttis = (from o in db.Kayttajat
+                           where kayttajat.username == o.username
+                           select o).FirstOrDefault();
+
+                if (kayttis != null)
+                {
+                    //luodaan käyttäjätunnuksen
+                    Kayttajat uusikayttaja = new Kayttajat
+                    {
+                        username = kayttajat.username,
+                        password = kryptattuSalasana,
+                    };
+
+
+                    db.Kayttajat.Add(uusikayttaja);
+                    db.SaveChanges();
+                  
+                }
+
+                return View(kayttajat);
+            }
             return View(kayttajat);
         }
 
