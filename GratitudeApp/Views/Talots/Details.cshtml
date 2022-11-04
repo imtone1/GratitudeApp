@@ -1,0 +1,42 @@
+﻿@model GratitudeApp.Talot
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Talot</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.linkki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.linkki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kuvaus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kuvaus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tarkeys)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarkeys)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.talo_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

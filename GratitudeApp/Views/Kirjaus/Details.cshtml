@@ -1,0 +1,58 @@
+﻿@model GratitudeApp.Kirjaus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kirjaus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.otsake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.otsake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teksti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teksti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pvm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pvm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kayttajat.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kayttajat.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Talot.linkki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Talot.linkki)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kirjaus_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

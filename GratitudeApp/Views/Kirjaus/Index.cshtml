@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GratitudeApp.Kirjaus>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.otsake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teksti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pvm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kayttajat.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Talot.linkki)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.otsake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.teksti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pvm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kayttajat.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Talot.linkki)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kirjaus_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kirjaus_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kirjaus_id })
+        </td>
+    </tr>
+}
+
+</table>
