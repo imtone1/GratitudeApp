@@ -1,20 +1,16 @@
 ﻿@model GratitudeApp.Kayttajat
 
-@{
-    ViewBag.Title = "Login";
-}
+<h2>Register</h2>
 
-<h2>Login</h2>
-
-
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-
+      
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+      
 
         <div class="form-group">
             @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -34,15 +30,13 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Login" class="btn btn-default" />
+                <input type="submit" value="Register" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
-@Html.Action("_Create","Kayttajats")
-<div>
-    @Html.ActionLink("To home page", "Index")
-</div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

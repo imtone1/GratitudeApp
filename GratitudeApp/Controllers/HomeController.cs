@@ -16,12 +16,12 @@ namespace GratitudeApp.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
         // Kirjautuminen ja sessioiden luominen
         public ActionResult Login()
         {

@@ -41,7 +41,7 @@ namespace GratitudeApp.Controllers
         public ActionResult Create()
         {
             
-                return View();
+                return PartialView();
           
         }
 
@@ -78,9 +78,55 @@ namespace GratitudeApp.Controllers
                   
                 }
 
-                return View(kayttajat);
+                return PartialView(kayttajat);
             }
-            return View(kayttajat);
+            return PartialView(kayttajat);
+        }
+
+        // GET: Kayttajats/Create
+        public ActionResult _Create()
+        {
+
+            return PartialView();
+
+        }
+
+        // POST: Kayttajats/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult _Create([Bind(Include = "username,password")] Kayttajat kayttajat)
+        {
+            if (ModelState.IsValid)
+            {
+                LoginService lService = new LoginService();
+                string kryptattuSalasana = lService.md5_string(kayttajat.password);
+
+                //Tarkistetaan onko olemassa
+                Kayttajat kayttis = new Kayttajat();
+                kayttis = (from o in db.Kayttajat
+                           where kayttajat.username == o.username
+                           select o).FirstOrDefault();
+
+                if (kayttis == null)
+                {
+                    //luodaan käyttäjätunnuksen
+                    Kayttajat uusikayttaja = new Kayttajat
+                    {
+                        username = kayttajat.username,
+                        password = kryptattuSalasana,
+                    };
+
+                    db.Kayttajat.Add(uusikayttaja);
+                    db.SaveChanges();
+
+                }
+
+                return PartialView(kayttajat);
+            }
+            return PartialView(kayttajat);
         }
 
         [Authorize]
