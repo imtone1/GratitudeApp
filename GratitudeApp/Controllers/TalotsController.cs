@@ -12,12 +12,27 @@ namespace GratitudeApp.Controllers
 {
     public class TalotsController : Controller
     {
-        private gratitudetietokantaEntities db = new gratitudetietokantaEntities();
+        private gratitudeEntities db = new gratitudeEntities();
 
         // GET: Talots
+        
         public ActionResult Index()
         {
-            return View(db.Talot.ToList());
+            if (Session["UserName"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            else
+            {
+                var username = Session["UserName"];
+
+                var talotLista = (from a in db.Talot
+                                  join o in db.Kirjaus on a.talo_id equals o.talo_id
+                                  join k in db.Kayttajat on o.kayttaja_id equals k.kayttaja_id
+                                  where k.username == username.ToString()
+                                  select a).ToList();
+                return View(talotLista);
+            }
         }
 
         // GET: Talots/Details/5

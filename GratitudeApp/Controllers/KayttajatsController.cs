@@ -13,7 +13,7 @@ namespace GratitudeApp.Controllers
 {
     public class KayttajatsController : Controller
     {
-        private gratitudetietokantaEntities db = new gratitudetietokantaEntities();
+        private gratitudeEntities db = new gratitudeEntities();
 
         // GET: Kayttajats
         public ActionResult Index()
@@ -36,18 +36,22 @@ namespace GratitudeApp.Controllers
             return View(kayttajat);
         }
 
+        
         // GET: Kayttajats/Create
         public ActionResult Create()
         {
-            return View();
+            
+                return View();
+          
         }
 
         // POST: Kayttajats/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "kayttaja_id,username,password")] Kayttajat kayttajat)
+        public ActionResult Create([Bind(Include = "username,password")] Kayttajat kayttajat)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +64,7 @@ namespace GratitudeApp.Controllers
                            where kayttajat.username == o.username
                            select o).FirstOrDefault();
 
-                if (kayttis != null)
+                if (kayttis == null)
                 {
                     //luodaan käyttäjätunnuksen
                     Kayttajat uusikayttaja = new Kayttajat
@@ -68,7 +72,6 @@ namespace GratitudeApp.Controllers
                         username = kayttajat.username,
                         password = kryptattuSalasana,
                     };
-
 
                     db.Kayttajat.Add(uusikayttaja);
                     db.SaveChanges();
@@ -80,6 +83,7 @@ namespace GratitudeApp.Controllers
             return View(kayttajat);
         }
 
+        [Authorize]
         // GET: Kayttajats/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -98,6 +102,7 @@ namespace GratitudeApp.Controllers
         // POST: Kayttajats/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "kayttaja_id,username,password")] Kayttajat kayttajat)

@@ -201,8 +201,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="GratitudeData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GratitudeData.Context.cs</LastGenOutput>
       <DependentUpon>GratitudeData.edmx</DependentUpon>
+      <LastGenOutput>GratitudeData.Context.cs</LastGenOutput>
     </Content>
     <Content Include="GratitudeData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -211,6 +211,11 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\ej2\compatibility\material.scss" />
+    <Content Include="Content\ej2\compatibility\highcontrast.scss" />
+    <Content Include="Content\ej2\compatibility\fabric.scss" />
+    <Content Include="Content\ej2\compatibility\bootstrap4.scss" />
+    <Content Include="Content\ej2\compatibility\bootstrap.scss" />
     <EntityDeploy Include="GratitudeData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GratitudeData.Designer.cs</LastGenOutput>
@@ -218,11 +223,7 @@
     <Content Include="GratitudeData.edmx.diagram">
       <DependentUpon>GratitudeData.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\ej2\compatibility\material.scss" />
-    <Content Include="Content\ej2\compatibility\highcontrast.scss" />
-    <Content Include="Content\ej2\compatibility\fabric.scss" />
-    <Content Include="Content\ej2\compatibility\bootstrap4.scss" />
-    <Content Include="Content\ej2\compatibility\bootstrap.scss" />
+    <Content Include="connections.config" />
     <None Include="Properties\PublishProfiles\gratitudecity - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ej2\ej2.min.js" />
@@ -236,6 +237,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Talot\Talo_1.png" />
+    <Content Include="Talot\Talo_2.png" />
+    <Content Include="Talot\Talo_3.png" />
+    <Content Include="Talot\Talo_4.png" />
+    <Content Include="Talot\Talo_5.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -265,6 +271,7 @@
     <Content Include="Views\Talots\Details.cshtml" />
     <Content Include="Views\Talots\Edit.cshtml" />
     <Content Include="Views\Talots\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,10 +13,10 @@ namespace GratitudeApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class gratitudetietokantaEntities : DbContext
+    public partial class gratitudeEntities : DbContext
     {
-        public gratitudetietokantaEntities()
-            : base("name=gratitudetietokantaEntities")
+        public gratitudeEntities()
+            : base("name=gratitudeEntities")
         {
         }
     

@@ -12,7 +12,7 @@ namespace GratitudeApp.Controllers
 {
     public class KirjausController : Controller
     {
-        private gratitudetietokantaEntities db = new gratitudetietokantaEntities();
+        private gratitudeEntities db = new gratitudeEntities();
 
         // GET: Kirjaus
         public ActionResult Index()

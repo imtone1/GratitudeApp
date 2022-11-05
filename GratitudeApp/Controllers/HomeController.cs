@@ -10,7 +10,7 @@ namespace GratitudeApp.Controllers
 {
     public class HomeController : Controller
     {
-        private gratitudetietokantaEntities db = new gratitudetietokantaEntities();
+        private gratitudeEntities db = new gratitudeEntities();
         public ActionResult Index()
         {
             return View();
@@ -29,7 +29,7 @@ namespace GratitudeApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Authorize(Kayttajat LoginModel)
+        public ActionResult Login(Kayttajat LoginModel)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace GratitudeApp.Controllers
                     ViewBag.LoggedStatus = "In";
                     ViewBag.LoginError = 0;
 
-                    return RedirectToAction("Create", "Kirjaus"); //Tässä määritellään mihin onnistunut kirjautuminen johtaa
+                    return RedirectToAction("Create", "Kayttajats"); //Tässä määritellään mihin onnistunut kirjautuminen johtaa
 
 
                 }
@@ -62,7 +62,7 @@ namespace GratitudeApp.Controllers
                     ViewBag.LoginMessage = "Login unsuccessfull";
                     ViewBag.LoggedStatus = "Out";
                     ViewBag.LoginError = 1;
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Create", "Kayttajats");
 
                     //return View("Login", LoginModel);
                 }
@@ -72,7 +72,7 @@ namespace GratitudeApp.Controllers
                 TempData["Errori"] = "Kirjautuminen epäonnistui!";
                 TempData["BodyText1"] = "Tarkista käyttäjätunnus ja salasana.";
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Create", "Kayttajats");
             }
         }
     }
