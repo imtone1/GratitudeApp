@@ -1,0 +1,37 @@
+
+*{
+    box-sizing: border-box;
+    cursor: none;
+}
+
+
+
+.house{
+    width: 400px;
+    height: 200px;
+    background-color: blue;
+    background-image: url('./pngegg.png');
+    background-position: center;
+    filter: blur(0.5px);
+}
+
+
+/* .house:hover{
+    background-image: url('./pngegg2.png');
+    background-position: center;
+
+} */
+
+
+
+.cursorFigure{
+
+    font-size: 2rem;
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+}
+
+

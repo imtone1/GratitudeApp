@@ -1,0 +1,47 @@
+h1{
+    color: violet;
+}
+
+
+.grid-container{
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+.grid-item{
+
+    background-color: blue;
+    padding: 40px;
+    border: 2px solid white;
+
+}
+
+#one{
+
+    background-image: url('./pngwing.com.png');
+    background-position: center;
+    background-size: 20%;
+    background-repeat: no-repeat;
+
+
+}
+#two{
+
+    background-image: url('./pngwing22.com.png');
+    background-position: center;
+    background-size: 20%;
+    background-repeat: no-repeat;
+
+
+}
+#three{
+
+    background-image: url('./pngwing333.com.png');
+    background-position: center;
+    background-size: 20%;
+    background-repeat: no-repeat;
+
+
+}
