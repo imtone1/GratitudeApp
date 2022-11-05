@@ -1,52 +1,17 @@
 ﻿@model IEnumerable<GratitudeApp.Talot>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "City";
 }
 
-@*<h2>Index</h2>*@
 
-
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.linkki)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.kuvaus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tarkeys)
-        </th>
-        <th></th>
-    </tr>
-
+<div class="taloihin">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.linkki)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.kuvaus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tarkeys)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.talo_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.talo_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.talo_id })
-            </td>
 
-        </tr>*@
-@foreach (var item in Model)
-{
-    <div class="grid-container">
 
-        <div class="grid-item" id='talo+@Html.DisplayFor(modelItem => item.tarkeys)'><img src="@Html.DisplayFor(modelItem => item.linkki)" alt="Girl in a jacket" width="500" height="600"></div>
+        <img id="@Html.DisplayFor(modelItem => item.tarkeys)talo" src="@Html.DisplayFor(modelItem => item.linkki)" alt="talo-@Html.DisplayFor(modelItem => item.tarkeys)" srcset="">
 
-    </div>
-}
+    }
+</div>
 
-@*</table>*@

@@ -93,7 +93,7 @@ int taloid=talo.ElementAt(rand.Next(talo.Count()));
                     db.Kirjaus.Add(uusiteksti);
                     db.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             return View(kirjaus);

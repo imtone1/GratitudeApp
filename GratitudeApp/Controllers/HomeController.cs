@@ -16,12 +16,12 @@ namespace GratitudeApp.Controllers
             return View();
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
+        public ActionResult About()
+        {
+            
 
-        //    return View();
-        //}
+            return View();
+        }
         // Kirjautuminen ja sessioiden luominen
         public ActionResult Login()
         {
@@ -53,7 +53,7 @@ namespace GratitudeApp.Controllers
                     ViewBag.LoggedStatus = "In";
                     ViewBag.LoginError = 0;
 
-                    return RedirectToAction("Login");//Tässä määritellään mihin onnistunut kirjautuminen johtaa
+                    return RedirectToAction("Create", "Kirjaus");//Tässä määritellään mihin onnistunut kirjautuminen johtaa
 
 
                 }
@@ -72,7 +72,7 @@ namespace GratitudeApp.Controllers
                 TempData["Errori"] = "Kirjautuminen epäonnistui!";
                 TempData["BodyText1"] = "Tarkista käyttäjätunnus ja salasana.";
 
-                return RedirectToAction("Create", "Kayttajats");
+                return RedirectToAction("Login");
             }
         }
     }
