@@ -3,9 +3,37 @@
 @{
     ViewBag.Title = "City";
 }
+@section Scripts {
 
+    <script>
+        $(document).on('mousemove', function (e) {
+            var xPos = e.pageX;
+            var yPos = e.pageY;
+            // console.log(xPos, yPos);
+            $('.circle-out').css({
+                'top': yPos,
+                'left': xPos
+            });
+        });
+
+        let tama = document.querySelector(".circle-ini");
+        tama.addEventListener("mouseover", mitavaan);
+        function mitavaan() {
+            tama.style.backgroundImage = "url(Tyyli/Tausta.jpg)";
+        }
+        tama.addEventListener("mouseout", mitavaan2);
+        function mitavaan2() {
+            tama.style.backgroundImage = "";
+        }
+
+    </script>
+}
 
 <div class="taloihin">
+    @*<div class="circle-out">
+        <div class="circle-in"></div>
+    </div>
+    <div class="circle-ini"></div>*@
     @foreach (var item in Model)
     {
 

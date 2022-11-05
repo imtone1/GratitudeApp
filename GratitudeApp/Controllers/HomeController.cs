@@ -69,7 +69,7 @@ namespace GratitudeApp.Controllers
             }
             catch
             {
-                TempData["Errori"] = "Kirjautuminen epäonnistui!";
+                ViewBag.LoginMessage = "Kirjautuminen epäonnistui!";
                 TempData["BodyText1"] = "Tarkista käyttäjätunnus ja salasana.";
 
                 return RedirectToAction("Login");

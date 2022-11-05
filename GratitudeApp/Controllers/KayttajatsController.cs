@@ -84,10 +84,10 @@ namespace GratitudeApp.Controllers
         //}
 
         // GET: Kayttajats/Create
-        public ActionResult _Create()
+        public ActionResult Create()
         {
 
-            return PartialView();
+            return View();
 
         }
 
@@ -97,7 +97,7 @@ namespace GratitudeApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult _Create([Bind(Include = "username,password")] Kayttajat kayttajat)
+        public ActionResult Create([Bind(Include = "username,password")] Kayttajat kayttajat)
         {
             if (ModelState.IsValid)
             {

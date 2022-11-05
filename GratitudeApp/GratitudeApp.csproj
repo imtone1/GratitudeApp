@@ -209,6 +209,7 @@
       <DependentUpon>GratitudeData.edmx</DependentUpon>
       <LastGenOutput>GratitudeData.cs</LastGenOutput>
     </Content>
+    <Content Include="Pictures\Avatar1.png" />
     <Content Include="Pictures\backgroud.png" />
     <Content Include="Pictures\Gratitude_City.png" />
     <Content Include="Pictures\Houses_after_transition.png" />
