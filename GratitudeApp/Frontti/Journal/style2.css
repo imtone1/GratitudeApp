@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    
+}
+
+
+
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    /* height: 200px; */
+    /* background-color: blueviolet; */
+
+    background-image: url('./IMAGE.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* 
+.main-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#journal{
+    /* position: absolute; */
+    /* display: flex; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8rem;
+    /* font-size: 17px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    border: none;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0);
+}
