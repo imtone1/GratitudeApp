@@ -1,0 +1,12 @@
+.linkki{
+    width: 150px;
+    height: 150px;
+    background: red;
+
+
+}
+
+#linkki{
+    font-size: 20px;
+    border-radius: 12px;
+}
