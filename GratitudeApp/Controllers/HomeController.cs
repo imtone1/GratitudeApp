@@ -46,14 +46,14 @@ namespace GratitudeApp.Controllers
                 {
 
                     Session["UserName"] = LoggedUser.username;
-                    
+                    Session["UserId"]=LoggedUser.kayttaja_id;
                     Session["LoggedUser"] = LoggedUser.username;
 
                     ViewBag.LoginMessage = "Successfull login";
                     ViewBag.LoggedStatus = "In";
                     ViewBag.LoginError = 0;
 
-                    return RedirectToAction("Create", "Kayttajats"); //Tässä määritellään mihin onnistunut kirjautuminen johtaa
+                    return RedirectToAction("Create", "Kirjaus"); //Tässä määritellään mihin onnistunut kirjautuminen johtaa
 
 
                 }
