@@ -213,6 +213,7 @@
     <Content Include="Pictures\Gratitude_City.png" />
     <Content Include="Pictures\Houses_after_transition.png" />
     <Content Include="Pictures\IMAGE.png" />
+    <Content Include="Pictures\Inspiration.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\ej2\compatibility\material.scss" />

@@ -53,7 +53,7 @@ namespace GratitudeApp.Controllers
                     ViewBag.LoggedStatus = "In";
                     ViewBag.LoginError = 0;
 
-                    return RedirectToAction("Create", "Kirjaus"); //Tässä määritellään mihin onnistunut kirjautuminen johtaa
+                    return RedirectToAction("Login");//Tässä määritellään mihin onnistunut kirjautuminen johtaa
 
 
                 }
@@ -62,7 +62,7 @@ namespace GratitudeApp.Controllers
                     ViewBag.LoginMessage = "Login unsuccessfull";
                     ViewBag.LoggedStatus = "Out";
                     ViewBag.LoginError = 1;
-                    return RedirectToAction("Create", "Kayttajats");
+                    return RedirectToAction("Login");
 
                     //return View("Login", LoginModel);
                 }

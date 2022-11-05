@@ -37,51 +37,51 @@ namespace GratitudeApp.Controllers
         }
 
         
-        // GET: Kayttajats/Create
-        public ActionResult Create()
-        {
+        //// GET: Kayttajats/Create
+        //public ActionResult Create()
+        //{
             
-                return PartialView();
+        //        return PartialView();
           
-        }
+        //}
 
-        // POST: Kayttajats/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //// POST: Kayttajats/Create
+        //// To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "username,password")] Kayttajat kayttajat)
-        {
-            if (ModelState.IsValid)
-            {
-                LoginService lService = new LoginService();
-                string kryptattuSalasana = lService.md5_string(kayttajat.password);
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "username,password")] Kayttajat kayttajat)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        LoginService lService = new LoginService();
+        //        string kryptattuSalasana = lService.md5_string(kayttajat.password);
 
-                //Tarkistetaan onko olemassa
-                Kayttajat kayttis = new Kayttajat();
-                kayttis = (from o in db.Kayttajat
-                           where kayttajat.username == o.username
-                           select o).FirstOrDefault();
+        //        //Tarkistetaan onko olemassa
+        //        Kayttajat kayttis = new Kayttajat();
+        //        kayttis = (from o in db.Kayttajat
+        //                   where kayttajat.username == o.username
+        //                   select o).FirstOrDefault();
 
-                if (kayttis == null)
-                {
-                    //luodaan käyttäjätunnuksen
-                    Kayttajat uusikayttaja = new Kayttajat
-                    {
-                        username = kayttajat.username,
-                        password = kryptattuSalasana,
-                    };
+        //        if (kayttis == null)
+        //        {
+        //            //luodaan käyttäjätunnuksen
+        //            Kayttajat uusikayttaja = new Kayttajat
+        //            {
+        //                username = kayttajat.username,
+        //                password = kryptattuSalasana,
+        //            };
 
-                    db.Kayttajat.Add(uusikayttaja);
-                    db.SaveChanges();
+        //            db.Kayttajat.Add(uusikayttaja);
+        //            db.SaveChanges();
                   
-                }
+        //        }
 
-                return PartialView(kayttajat);
-            }
-            return PartialView(kayttajat);
-        }
+        //        return PartialView(kayttajat);
+        //    }
+        //    return PartialView(kayttajat);
+        //}
 
         // GET: Kayttajats/Create
         public ActionResult _Create()
@@ -124,9 +124,9 @@ namespace GratitudeApp.Controllers
 
                 }
 
-                return PartialView(kayttajat);
+                return RedirectToAction("Login", "Home");
             }
-            return PartialView(kayttajat);
+            return RedirectToAction("Login", "Home");
         }
 
         [Authorize]
