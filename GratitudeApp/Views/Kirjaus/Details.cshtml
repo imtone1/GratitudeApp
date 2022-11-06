@@ -4,19 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Gratitude Jounal</h2>
 
 <div>
-    <h4>Kirjaus</h4>
+    <h4>Kirjaus @Convert.ToDateTime(Model.pvm).ToString("dd.MM.yyyy")</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.otsake)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.otsake)
-        </dd>
+     
 
         <dt>
             @Html.DisplayNameFor(model => model.teksti)
@@ -26,13 +20,7 @@
             @Html.DisplayFor(model => model.teksti)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.pvm)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pvm)
-        </dd>
+      
 
         <dt>
             @Html.DisplayNameFor(model => model.Kayttajat.username)

@@ -182,18 +182,16 @@ mg {
 }
 
 .taloihin {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     /* height: 200px; */
     /* background-color: blueviolet; */
 
     background-image: url('/Pictures/Huonompi_leikkikaupunki.png');
+    height: 100%;
+    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .circle-out {

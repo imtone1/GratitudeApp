@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GratitudeApp.Talot>
+﻿@model IEnumerable<GratitudeApp.ViewModel.TaloKirjaus>
 
 @{
     ViewBag.Title = "City";
@@ -21,7 +21,7 @@
         function mitavaan() {
             tama.style.backgroundImage = "url(Tyyli/Tausta.jpg)";
         }
-        tama.addEventListener("mouseout", mitavaan2);
+        tama.addEventListener("onclick", mitavaan2);
         function mitavaan2() {
             tama.style.backgroundImage = "";
         }
@@ -31,14 +31,19 @@
 
 <div class="taloihin">
     @*<div class="circle-out">
-        <div class="circle-in"></div>
-    </div>
-    <div class="circle-ini"></div>*@
+            <div class="circle-in"></div>
+        </div>
+        <div class="circle-ini"></div>*@
     @foreach (var item in Model)
     {
 
-
-        <img id="@Html.DisplayFor(modelItem => item.tarkeys)talo" src="@Html.DisplayFor(modelItem => item.linkki)" alt="talo-@Html.DisplayFor(modelItem => item.tarkeys)" srcset="">
+      
+            
+       
+        @*<button type="button" onclick="location.href='@Url.Action("Details","Kirjaus", new { id=item.Kirjaus_id })'">*@
+       
+            <img id="@Html.DisplayFor(modelItem => item.tarkeys)talo" alt="talo-@Html.DisplayFor(modelItem => item.tarkeys)" src="@Html.DisplayFor(modelItem => item.Linkki)">
+        @*</button>*@
 
     }
 </div>

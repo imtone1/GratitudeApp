@@ -170,6 +170,7 @@
     <Compile Include="Talot.cs">
       <DependentUpon>GratitudeData.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\TaloKirjaus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

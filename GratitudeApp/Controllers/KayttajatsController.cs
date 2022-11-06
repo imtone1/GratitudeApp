@@ -129,64 +129,64 @@ namespace GratitudeApp.Controllers
             return RedirectToAction("Login", "Home");
         }
 
-        [Authorize]
-        // GET: Kayttajats/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Kayttajat kayttajat = db.Kayttajat.Find(id);
-            if (kayttajat == null)
-            {
-                return HttpNotFound();
-            }
-            return View(kayttajat);
-        }
+        //[Authorize]
+        //// GET: Kayttajats/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Kayttajat kayttajat = db.Kayttajat.Find(id);
+        //    if (kayttajat == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(kayttajat);
+        //}
 
-        // POST: Kayttajats/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "kayttaja_id,username,password")] Kayttajat kayttajat)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(kayttajat).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(kayttajat);
-        }
-        [Authorize]
-        // GET: Kayttajats/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Kayttajat kayttajat = db.Kayttajat.Find(id);
-            if (kayttajat == null)
-            {
-                return HttpNotFound();
-            }
-            return View(kayttajat);
-        }
-        [Authorize]
-        // POST: Kayttajats/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Kayttajat kayttajat = db.Kayttajat.Find(id);
-            db.Kayttajat.Remove(kayttajat);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //// POST: Kayttajats/Edit/5
+        //// To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "kayttaja_id,username,password")] Kayttajat kayttajat)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(kayttajat).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(kayttajat);
+        //}
+        //[Authorize]
+        //// GET: Kayttajats/Delete/5
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Kayttajat kayttajat = db.Kayttajat.Find(id);
+        //    if (kayttajat == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(kayttajat);
+        //}
+        //[Authorize]
+        //// POST: Kayttajats/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Kayttajat kayttajat = db.Kayttajat.Find(id);
+        //    db.Kayttajat.Remove(kayttajat);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {
