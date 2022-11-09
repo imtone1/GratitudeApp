@@ -1,45 +1,50 @@
-﻿@model IEnumerable<GratitudeApp.Talot>
+﻿@model IEnumerable<GratitudeApp.ViewModel.TaloKirjaus>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "City";
+}
+@section Scripts {
+
+    <script>
+        $(document).on('mousemove', function (e) {
+            var xPos = e.pageX;
+            var yPos = e.pageY;
+            // console.log(xPos, yPos);
+            $('.circle-out').css({
+                'top': yPos,
+                'left': xPos
+            });
+        });
+
+        let tama = document.querySelector(".circle-ini");
+        tama.addEventListener("mouseover", mitavaan);
+        function mitavaan() {
+            tama.style.backgroundImage = "url(Tyyli/Tausta.jpg)";
+        }
+        tama.addEventListener("onclick", mitavaan2);
+        function mitavaan2() {
+            tama.style.backgroundImage = "";
+        }
+
+    </script>
 }
 
-<h2>Index</h2>
+<div class="taloihin">
+    @*<div class="circle-out">
+            <div class="circle-in"></div>
+        </div>
+        <div class="circle-ini"></div>*@
+    @foreach (var item in Model)
+    {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.linkki)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.kuvaus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tarkeys)
-        </th>
-        <th></th>
-    </tr>
+      
+            
+       
+        @*<button type="button" onclick="location.href='@Url.Action("Details","Kirjaus", new { id=item.Kirjaus_id })'">*@
+       
+            <img id="@Html.DisplayFor(modelItem => item.tarkeys)talo" alt="talo-@Html.DisplayFor(modelItem => item.tarkeys)" src="@Html.DisplayFor(modelItem => item.Linkki)">
+        @*</button>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.linkki)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.kuvaus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tarkeys)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.talo_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.talo_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.talo_id })
-        </td>
-    </tr>
-}
+    }
+</div>
 
-</table>

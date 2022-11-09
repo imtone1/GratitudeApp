@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="gratitudetietokantaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="gratitudeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kayttajat">
           <Key>
             <PropertyRef Name="kayttaja_id" />
@@ -61,7 +61,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="gratitudetietokantaModelStoreContainer">
+        <EntityContainer Name="gratitudeModelStoreContainer">
           <EntitySet Name="Kayttajat" EntityType="Self.Kayttajat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kirjaus" EntityType="Self.Kirjaus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Talot" EntityType="Self.Talot" Schema="dbo" store:Type="Tables" />
@@ -78,7 +78,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="gratitudetietokantaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="gratitudeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Kayttajat">
           <Key>
             <PropertyRef Name="kayttaja_id" />
@@ -139,7 +139,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="gratitudetietokantaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="gratitudeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kayttajat" EntityType="Self.Kayttajat" />
           <EntitySet Name="Kirjaus" EntityType="Self.Kirjaus" />
           <EntitySet Name="Talot" EntityType="Self.Talot" />
@@ -157,9 +157,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="gratitudetietokantaModelStoreContainer" CdmEntityContainer="gratitudetietokantaEntities">
+        <EntityContainerMapping StorageEntityContainer="gratitudeModelStoreContainer" CdmEntityContainer="gratitudeEntities">
           <EntitySetMapping Name="Kayttajat">
-            <EntityTypeMapping TypeName="gratitudetietokantaModel.Kayttajat">
+            <EntityTypeMapping TypeName="gratitudeModel.Kayttajat">
               <MappingFragment StoreEntitySet="Kayttajat">
                 <ScalarProperty Name="kayttaja_id" ColumnName="kayttaja_id" />
                 <ScalarProperty Name="username" ColumnName="username" />
@@ -168,7 +168,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Kirjaus">
-            <EntityTypeMapping TypeName="gratitudetietokantaModel.Kirjaus">
+            <EntityTypeMapping TypeName="gratitudeModel.Kirjaus">
               <MappingFragment StoreEntitySet="Kirjaus">
                 <ScalarProperty Name="kirjaus_id" ColumnName="kirjaus_id" />
                 <ScalarProperty Name="otsake" ColumnName="otsake" />
@@ -180,7 +180,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Talot">
-            <EntityTypeMapping TypeName="gratitudetietokantaModel.Talot">
+            <EntityTypeMapping TypeName="gratitudeModel.Talot">
               <MappingFragment StoreEntitySet="Talot">
                 <ScalarProperty Name="talo_id" ColumnName="talo_id" />
                 <ScalarProperty Name="linkki" ColumnName="linkki" />

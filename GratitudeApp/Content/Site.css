@@ -1,7 +1,18 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿* {
+    margin: 0px;
 }
+
+body {
+    /* padding-top: 50px;
+    padding-bottom: 20px;*/
+    background-image: url("/Pictures/backgroud.png");
+    background-size: cover;
+}
+
+/*.kotisivu {
+    background-color: #cccccc;
+    margin:auto;
+}*/
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -20,11 +31,203 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
+
 }
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
     background-color: #777;
     border-color: #fff
+}
+
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    /* height: 200px; */
+    /* background-color: blueviolet; */
+
+    background-image: url('/Pictures/IMAGE.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kotisivu {
+    width: 100%;
+    height: 100vh;
+    /* height: 200px; */
+    /* background-color: blueviolet; */
+
+    background-image: url('/Pictures/Gratitude_City.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+.main-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+#journal {
+    /* position: absolute; */
+    /* display: flex; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.8rem;
+    /* font-size: 17px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    border: none;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+mg {
+    width: 100%;
+}
+
+
+#1talo {
+    width: 20px;
+    height: auto;
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    top: 400px;
+    left: 200px;
+}
+
+#2talo {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    top: 360px;
+    left: 640px;
+}
+
+#3talo {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    top: 520px;
+    left: 780px;
+}
+
+#4talo {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    top: 440px;
+    left: 1000px;
+}
+
+#5talo {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    top: 330px;
+    left: 1220px;
+}
+
+
+.kaupunkiin {
+    width: 100px;
+    height: 50px;
+    background-color: cadetblue;
+    float: right;
+    color:black;
+
+}
+.insp {
+    width: 80px;
+    height: 80px;
+    background-color: cadetblue;
+    float: right;
+    color: black;
+    display: flex;
+    justify-content: right;
+}
+.login{
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+}
+.inspiration {
+    width: 100%;
+    height: 100vh;
+    /* height: 200px; */
+    /* background-color: blueviolet; */
+
+    background-image: url('/Pictures/Inspiration.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taloihin {
+    width: 100%;
+    /* height: 200px; */
+    /* background-color: blueviolet; */
+
+    background-image: url('/Pictures/Huonompi_leikkikaupunki.png');
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circle-out {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: rgba(159, 255, 245, 1);
+    position: relative;
+    padding: 5px;
+    animation: grow .8s infinite;
+}
+
+.circle-in {
+    border-radius: 50%;
+    background: #D81159;
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+}
+
+.circle-ini {
+    border-radius: 50%;
+    background: black;
+    height: 40px;
+    background-image: url("/Pictures/Avatar1.png");
+    width: 40px;
+    margin: 0 auto;
+}
+
+.linkki {
+    width: 50px;
+    height: 50px;
+ 
+}
+
+#linkki {
+    font-size: 20px;
+    border-radius: 12px;
 }

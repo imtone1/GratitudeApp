@@ -1,0 +1,51 @@
+﻿@model GratitudeApp.Kayttajat
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<h3>@ViewBag.LoginMessage</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+           
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @placeholder="username" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @type = "password" , @placeholder="password"} })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="linkki">
+    <a href="@Url.Action("Create", "Kayttajats")" type="button" class="btn btn-default">Registration</a>
+    <a href="@Url.Action("Index", "Home")" type="button" class="btn btn-default">Home</a>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

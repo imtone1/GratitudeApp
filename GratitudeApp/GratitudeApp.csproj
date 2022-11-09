@@ -139,6 +139,7 @@
     <Compile Include="Controllers\KayttajatsController.cs" />
     <Compile Include="Controllers\KirjausController.cs" />
     <Compile Include="Controllers\TalotsController.cs" />
+    <Compile Include="Functions\Hmac.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -163,10 +164,13 @@
     <Compile Include="Kirjaus.cs">
       <DependentUpon>GratitudeData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pictures\Pictures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LoginService.cs" />
     <Compile Include="Talot.cs">
       <DependentUpon>GratitudeData.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\TaloKirjaus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -198,16 +202,28 @@
     <Content Include="Content\Site.css" />
     <Content Include="GratitudeData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GratitudeData.Context.cs</LastGenOutput>
       <DependentUpon>GratitudeData.edmx</DependentUpon>
+      <LastGenOutput>GratitudeData.Context.cs</LastGenOutput>
     </Content>
     <Content Include="GratitudeData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>GratitudeData.edmx</DependentUpon>
       <LastGenOutput>GratitudeData.cs</LastGenOutput>
     </Content>
+    <Content Include="Pictures\Avatar1.png" />
+    <Content Include="Pictures\backgroud.png" />
+    <Content Include="Pictures\Gratitude_City.png" />
+    <Content Include="Pictures\Houses_after_transition.png" />
+    <Content Include="Pictures\Huonompi_leikkikaupunki.png" />
+    <Content Include="Pictures\IMAGE.png" />
+    <Content Include="Pictures\Inspiration.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\ej2\compatibility\material.scss" />
+    <Content Include="Content\ej2\compatibility\highcontrast.scss" />
+    <Content Include="Content\ej2\compatibility\fabric.scss" />
+    <Content Include="Content\ej2\compatibility\bootstrap4.scss" />
+    <Content Include="Content\ej2\compatibility\bootstrap.scss" />
     <EntityDeploy Include="GratitudeData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GratitudeData.Designer.cs</LastGenOutput>
@@ -215,11 +231,8 @@
     <Content Include="GratitudeData.edmx.diagram">
       <DependentUpon>GratitudeData.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\ej2\compatibility\material.scss" />
-    <Content Include="Content\ej2\compatibility\highcontrast.scss" />
-    <Content Include="Content\ej2\compatibility\fabric.scss" />
-    <Content Include="Content\ej2\compatibility\bootstrap4.scss" />
-    <Content Include="Content\ej2\compatibility\bootstrap.scss" />
+    <Content Include="connections.config" />
+    <None Include="Properties\PublishProfiles\gratitudecity - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ej2\ej2.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -232,6 +245,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Talot\Talo_1.png" />
+    <Content Include="Talot\Talo_2.png" />
+    <Content Include="Talot\Talo_3.png" />
+    <Content Include="Talot\Talo_4.png" />
+    <Content Include="Talot\Talo_5.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -261,6 +279,8 @@
     <Content Include="Views\Talots\Details.cshtml" />
     <Content Include="Views\Talots\Edit.cshtml" />
     <Content Include="Views\Talots\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Kayttajats\_Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
