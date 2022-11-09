@@ -1,10 +1,5 @@
 # Junction 2022 Hachathon challenge
 Keep calm and don't panic (Reaktor)
-
-# Gratitude City
-
-Build your own city by being grateful! In this app you'll be filling up a gratitude journal. For every gratitude page written, you'll get a house into your own virtual city. This game-like structure helps to keep up the motivation for journaling and will plant more positivity into our lives.
-
 We think that there's never enough of gratitude in this world.
 We must actively practice it to cement its place in our lives.
 
@@ -14,6 +9,16 @@ Our app motivates to keep gratitude journal by creating a virtual house for ever
 
 We believe that our solution is an effective way of getting many people to practice journaling and getting the benefits from that.
 
-VIDEO
+# Gratitude City
+## **[Youtube video](https://www.youtube.com/watch?v=1T1k1bqLMuA&feature=youtu.be)**
+![Home page](Gratitude_City.png "Home page")
 
-[![Youtube video](https://www.youtube.com/watch?v=1T1k1bqLMuA&feature=youtu.be)](https://www.youtube.com/watch?v=1T1k1bqLMuA&feature=youtu.be)
+## Build your own city by being grateful! In this app you'll be filling up a gratitude journal. 
+![Grateful](Today_Im_grateful_for.....png "Grateful for")
+
+## For every gratitude page written, you'll get a house into your own virtual city. 
+![City](CITY.png "City page")
+
+## This game-like structure helps to keep up the motivation for journaling and will plant more positivity into our lives.
+### Inspiration page:
+![Inspiration page](INSPOPAGE.png "Inspiration page")
